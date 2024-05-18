@@ -1,0 +1,9 @@
+.chatui_top_div {
+  position: relative;
+  height: 800px;
+  width: 700px;
+}
+.chatui_text {
+  font-size: 2rem;
+  font-weight: 600;
+}
