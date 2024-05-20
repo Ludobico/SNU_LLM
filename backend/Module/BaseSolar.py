@@ -87,7 +87,7 @@ step5. ### Human이 "끝"이라는 질문이 들어오면, 지금까지 종합�
 {chat_history}
 
 ### System:
-당신은 작가로서 상대방과 함께 글을 작성해 나갑니다.
+당신은 작가로서 상대방과 함께 글을 작성해 나갑니다. Let's think step by step, 선택지가 같은말이 나오지 않도록 주의하십시오.
 step1: {question}으로 시작하는 소설의 도입부를 한 문단 작성해줘.이야기는 우리 둘이 같이 쓰는 거니까 혼자 끝내면 안 돼. 꼭 한 문단으로 써줘. 문학적인 표현들을 다양하게 사용해서 세 문장 이상 작성해줘.
 step2: 이후 소설 전개를 4가지 서로 다른 전개 방향으로 써보려고 해. 각 선택지는 한 문장으로 작성해줘. 선택5는 항상 끝이라고 출력해줘.
     - 선택1
@@ -95,7 +95,6 @@ step2: 이후 소설 전개를 4가지 서로 다른 전개 방향으로 써보�
     - 선택3
     - 선택4
     - 선택5: 끝
-step3: Let's think step by step, 선택지가 같은말이 나오지 않도록 주의하십시오.
 
 ### Assistant:
 
@@ -110,7 +109,7 @@ step3: Let's think step by step, 선택지가 같은말이 나오지 않도록 �
 {chat_history}
 
 ### System:
-당신은 작가로서 상대방과 함께 글을 작성해 나갑니다.
+당신은 작가로서 상대방과 함께 글을 작성해 나갑니다.Let's think step by step, 선택지가 같은말이 나오지 않도록 주의하십시오.
 step1: 소설을 이어서 써보자. {question}으로 시작하는 소설의 다음 문단을 하나 작성해줘. 이야기는 우리 둘이 같이 쓰는 거니까 혼자 끝내면 안 돼. 꼭 한 문단으로 써줘. 문학적인 표현들을 다양하게 사용해줘.
 step2: 이후 소설 전개를 4가지 서로 다른 전개 방향으로 써보려고 해. 각 선택지는 한 문장으로 작성해줘. 선택5는 항상 끝이라고 출력해줘. 선택지1~4의 유사도가 낮게 작성해줘.
     - 선택1
@@ -118,7 +117,6 @@ step2: 이후 소설 전개를 4가지 서로 다른 전개 방향으로 써보�
     - 선택3
     - 선택4
     - 선택5: 끝
-step3: Let's think step by step, 선택지가 같은말이 나오지 않도록 주의하십시오.
 
 ### Assistant:
 
@@ -133,9 +131,9 @@ step3: Let's think step by step, 선택지가 같은말이 나오지 않도록 �
 {chat_history}
 
 ### System:
+Let's think step by step
 step1: 지금까지의 소설 내용을 마무리하는 마지막 문단을 작성해줘.
-step2: 네가 작성한 마지막 문단을 포함하여, 이 소설 내용 전반을 잘 대표하는 제목을 지어줘.
-step3: Let's think step by step {mbti}
+step2: 네가 작성한 마지막 문단을 포함하여, 이 소설 내용 전반을 잘 대표하는 제목을 지어줘.{mbti}
 
 ### Assistant:
 
@@ -192,7 +190,7 @@ Let's think step by step
     api_key = cls().upstage
     llm = ChatUpstage(upstage_api_key=api_key,temperature=0.7)
     parser = StrOutputParser()
-    chain = LLMChain(llm=llm, prompt=prompt, verbose=True, memory=memory, output_parser=parser)
+    chain = LLMChain(llm=llm, prompt=prompt, memory=memory, output_parser=parser)
 
     result = chain.invoke(question)
     return result
@@ -202,7 +200,7 @@ Let's think step by step
     api_key = cls().upstage
     llm = ChatUpstage(upstage_api_key=api_key,temperature=0.7)
     parser = StrOutputParser()
-    chain = LLMChain(llm=llm, prompt=prompt, verbose=True, memory=memory, output_parser=parser)
+    chain = LLMChain(llm=llm, prompt=prompt, memory=memory, output_parser=parser)
 
     result = chain.invoke(question)
     return result
@@ -212,7 +210,7 @@ Let's think step by step
     api_key = cls().upstage
     llm = ChatUpstage(upstage_api_key=api_key,temperature=0.7)
     parser = StrOutputParser()
-    chain = LLMChain(llm=llm, prompt=prompt, verbose=True, memory=memory, output_parser=parser)
+    chain = LLMChain(llm=llm, prompt=prompt, memory=memory, output_parser=parser)
 
     result = chain.invoke(question)
     return result
@@ -222,7 +220,7 @@ Let's think step by step
     api_key = cls().upstage
     llm = ChatUpstage(upstage_api_key=api_key,temperature=0.7)
     parser = StrOutputParser()
-    chain = LLMChain(llm=llm, prompt=prompt, verbose=True, memory=memory, output_parser=parser)
+    chain = LLMChain(llm=llm, prompt=prompt, memory=memory, output_parser=parser)
 
     result = chain.invoke(question)
     return result
